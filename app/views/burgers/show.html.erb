@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @burger.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @burger.description %>
+</p>
+
+<%= image_tag(@burger.image) %>
+
+<%= link_to 'Edit', edit_burger_path(@burger) %> |
+<%= link_to 'Back', burgers_path %>
