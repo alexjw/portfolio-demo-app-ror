@@ -1,5 +1,5 @@
 <%= bootstrap_form_for(@ingredient) do |f| %>
   <%= f.text_field :name %>
   <%= f.text_field :unit %>
-  <%= f.submit %>
+  <%= f.button fa_icon("save", class:"action-icons save-icon", type: :regular), class: "action-button" %>
 <% end %>

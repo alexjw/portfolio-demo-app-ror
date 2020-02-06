@@ -17,7 +17,7 @@
         <td><%= ingredient.unit %></td>
         <td style="text-align: center">
           <%= link_to fa_icon("eye", class: "action-icons show-icon"), ingredient, class: "action-link" %>
-          <%= link_to fa_icon("pencil", class: "action-icons edit-icon"), edit_ingredient_path(ingredient), class: "action-link" %>
+          <%= link_to fa_icon("pencil-alt", class: "action-icons edit-icon"), edit_ingredient_path(ingredient), class: "action-link" %>
           <%= link_to fa_icon("trash", class: "action-icons delete-icon"), ingredient, class: "action-link", method: "delete" %>
         </td>
       </tr>

@@ -1,14 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @ingredient.name %>
-</p>
+<div class="container">
+  <p>
+    <strong>Name:</strong>
+    <%= @ingredient.name %>
+  </p>
 
-<p>
-  <strong>Unit:</strong>
-  <%= @ingredient.unit %>
-</p>
+  <p>
+    <strong>Unit:</strong>
+    <%= @ingredient.unit %>
+  </p>
 
-<%= link_to 'Edit', edit_ingredient_path(@ingredient) %> |
-<%= link_to 'Back', ingredients_path %>
+  <%= link_to fa_icon("pencil-alt", class: "action-icons edit-icon"), edit_ingredient_path(@ingredient), class: "action-link" %>
+  <%= link_to fa_icon("reply", class:"action-icons return-icon"), ingredients_path, class: "action-link" %>
+</div>
