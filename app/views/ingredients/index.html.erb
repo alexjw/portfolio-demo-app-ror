@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <h1>Ingredients</h1>
+
+  <table class="table table-striped table-hover">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Unit</th>
+      <th style="text-align: center">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @ingredients.each do |ingredient| %>
+      <tr>
+        <td><%= ingredient.name %></td>
+        <td><%= ingredient.unit %></td>
+        <td style="text-align: center">
+          <%= link_to fa_icon("eye", class: "action-icons show-icon"), ingredient, class: "action-link" %>
+          <%= link_to fa_icon("pencil", class: "action-icons edit-icon"), edit_ingredient_path(ingredient), class: "action-link" %>
+          <%= link_to fa_icon("trash", class: "action-icons delete-icon"), ingredient, class: "action-link", method: "delete" %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <br>
+  <a title="New Ingredient" class="action-link" href=<%= new_ingredient_path %> ><i class="fa fa-plus action-icons new-icon"></i></a>
+</div>

@@ -1,0 +1,92 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/* Colors Schema: */
+$color-1: #D98324
+$color-2: #343A40
+$color-3: #DCC48E
+$color-4: #0F4C5C
+$color-5: #9A031E
+
+$footer-background: $color-2
+$main-background: $color-1
+$container-background: $color-3
+
+body
+  padding-top: 60px
+  background-color: $main-background
+  background-image: url("brick-wall-dark.png")
+
+h1
+  color: $color-5
+
+.container
+  background-color: $container-background
+
+footer
+  margin-top: 10px
+  height: 60px
+  line-height: 60px
+  color: white
+  //background-color: $footer-background
+
+footer .container
+  height: 60px
+  background-color: $footer-background
+
+.action-link
+  text-align: center
+
+.action-icons
+  transition: all 0.5s
+  width: 36px
+  height: auto
+  border-radius: 4px
+  padding: 6px 6px 6px 6px
+  margin-left: 4px
+  margin-right: 4px
+
+.show-icon
+  border: 2px solid green
+  color: green
+
+.show-icon:hover
+  background-color: green
+  color: white
+
+.edit-icon
+  border: 2px solid orange
+  color: orange
+
+.edit-icon:hover
+  background-color: orange
+  color: white
+
+.delete-icon
+  border: 2px solid red
+  color: red
+
+.delete-icon:hover
+  background-color: red
+  color: white
+
+.new-icon
+  border: 2px solid blue
+  color: blue
+
+.new-icon:hover
+  background-color: blue
+  color: white
