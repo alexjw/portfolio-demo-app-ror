@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <p>
+    <strong>Table:</strong>
+    <%= @order.table %>
+  </p>
+
+  <p>
+    <strong>Client:</strong>
+    <% if @order.client != nil %>
+      <%= @order.client.name %>
+    <% end %>
+  </p>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Meal</th>
+      <th>Quantity</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @order.order_details.each do |detail| %>
+      <tr>
+        <td><%= detail.meal.name %></td>
+        <td><%= detail.quantity %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to 'Edit', edit_order_path(@order) %> |
+  <%= link_to 'Back', orders_path %>
+</div>

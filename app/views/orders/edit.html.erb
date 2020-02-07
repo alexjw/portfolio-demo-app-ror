@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Editing Order</h1>
+
+  <%= render 'form', order: @order %>
+
+  <%= link_to 'Close Order', close_order_path(@order) %>
+
+  <%= link_to 'Back', meals_path %>
+</div>

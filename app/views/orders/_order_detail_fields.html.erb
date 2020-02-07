@@ -1,0 +1,5 @@
+<tr class="nested-fields">
+  <td><%= f.collection_select(:meal_id, Meal.all, :id, :name, { prompt: 'Select' }) %></td>
+  <td><%= f.text_field :quantity %></td>
+  <td><%= link_to_remove_association "Remove Meal", f %></td>
+</tr>

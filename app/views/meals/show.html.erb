@@ -1,14 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @meal.name %>
-</p>
+<div class="container">
+  <p>
+    <strong>Name:</strong>
+    <%= @meal.name %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @meal.description %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @meal.description %>
+  </p>
 
-<%= link_to 'Edit', edit_meal_path(@meal) %> |
-<%= link_to 'Back', meals_path %>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Ingredient</th>
+      <th>Quantity</th>
+    </tr>
+    </thead>
+    <tbody>
+      <% @meal.meal_details.each do |detail| %>
+        <tr>
+          <td><%= detail.ingredient.name %></td>
+          <td><%= detail.quantity %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to 'Edit', edit_meal_path(@meal) %> |
+  <%= link_to 'Back', meals_path %>
+</div>

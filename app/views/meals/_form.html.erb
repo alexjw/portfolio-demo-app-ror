@@ -21,7 +21,7 @@
     <%= f.text_field :description %>
   </div>
 
-  <table>
+  <table class="table table-striped">
     <thead>
     <tr>
       <th>Ingredient</th>
@@ -30,17 +30,15 @@
     </tr>
     </thead>
     <tbody class="ingredients">
-    <%= f.fields_for :meal_details do |detail| %>
-      <div>
-        <%= render 'meal_detail_fields', f: detail %>
-      </div>
-    <% end %>
+      <%= f.fields_for :meal_details do |detail| %>
+          <%= render 'meal_detail_fields', f: detail %>
+      <% end %>
     </tbody>
   </table>
 
 
   <div class="links">
-    <%= link_to_add_association 'add ingredient', f, :meal_details, partial: 'meal_detail_fields' %>
+    <%= link_to_add_association 'add ingredient', f, :meal_details, data: {"association-insertion-node" => ".ingredients", "association-insertion-method" => "append"} %>
   </div>
 
   <div class="actions">

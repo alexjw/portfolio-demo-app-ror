@@ -1,0 +1,47 @@
+<%= form_with(model: order, local: true) do |f| %>
+  <% if order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(meal.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+        <% order.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :table %>
+    <%= f.text_field :table %>
+  </div>
+
+  <div class="field">
+    <%= f.label :client %>
+    <%= f.collection_select(:client_id, Client.all, :id, :name, { prompt: 'Select' }) %>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Meal</th>
+      <th>Quantity</th>
+      <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody id="details">
+    <%= f.fields_for :order_details do |detail| %>
+      <%= render 'order_detail_fields', f: detail %>
+    <% end %>
+    </tbody>
+  </table>
+
+
+  <div class="links">
+    <%= link_to_add_association 'add meal', f, :order_details, data: {"association-insertion-node" => "#details", "association-insertion-method" => "append"} %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
