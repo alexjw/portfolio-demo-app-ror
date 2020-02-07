@@ -32,6 +32,8 @@ gem 'bootstrap_form', '~> 4.3'
 # gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
 gem 'font_awesome5_rails'
 
+gem 'cocoon', '~> 1.2', '>= 1.2.14'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 

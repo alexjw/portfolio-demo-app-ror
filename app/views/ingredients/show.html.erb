@@ -11,6 +11,6 @@
     <%= @ingredient.unit %>
   </p>
 
-  <%= link_to fa_icon("pencil-alt", class: "action-icons edit-icon"), edit_ingredient_path(@ingredient), class: "action-link" %>
+  <%= link_to fa_icon("pencil-alt", class: "action-icons edit-icon"), edit_ingredient_path(@ingredient), class: "action-link", title: "edit" %>
   <%= link_to fa_icon("reply", class:"action-icons return-icon"), ingredients_path, class: "action-link" %>
 </div>
