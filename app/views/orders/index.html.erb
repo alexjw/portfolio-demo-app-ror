@@ -1,5 +1,6 @@
 <div class="container">
-  <h1>Pending Orders</h1>
+  <h1>Orders</h1>
+  <h2>Pending Orders</h2>
 
   <table class="table table-striped">
     <thead>
@@ -7,9 +8,45 @@
         <td>Order Number</td>
         <td>Table</td>
         <td>Client</td>
+        <td>Edit</td>
       </tr>
     </thead>
+    <tbody>
+    <% Order.where(closed: false).find_each do |order| %>
+      <tr>
+        <td><%= order.id %></td>
+        <td><%= order.table %></td>
+        <td><%= if order.client != nil; order.client.name; end %></td>
+        <td><%= link_to "edit", edit_order_path(order) %></td>
+      </tr>
+    <% end %>
+    </tbody>
   </table>
 
   <%= link_to 'New Order', new_order_path %>
+
+  <h2>All Orders</h2>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <td>Order Number</td>
+      <td>Table</td>
+      <td>Client</td>
+      <td>Closed?</td>
+      <td>Edit</td>
+    </tr>
+    </thead>
+    <tbody>
+    <% Order.all.find_each do |order| %>
+      <tr>
+        <td><%= order.id %></td>
+        <td><%= order.table %></td>
+        <td><%= if order.client != nil; order.client.name; end %></td>
+        <td><%= order.closed %></td>
+        <td><%= link_to "edit", edit_order_path(order) %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
 </div>

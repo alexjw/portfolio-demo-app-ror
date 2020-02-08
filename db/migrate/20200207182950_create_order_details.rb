@@ -4,6 +4,7 @@ class CreateOrderDetails < ActiveRecord::Migration[6.0]
       t.integer :order_id
       t.integer :meal_id
       t.decimal :price
+      t.string :status, default: 'Pending'
       t.decimal :quantity, default: 1
       t.boolean :done, default: false
 

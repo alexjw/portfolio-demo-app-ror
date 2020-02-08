@@ -7,6 +7,11 @@
   </p>
 
   <p>
+    <strong>Closed:</strong>
+    <%= @order.closed %>
+  </p>
+
+  <p>
     <strong>Client:</strong>
     <% if @order.client != nil %>
       <%= @order.client.name %>

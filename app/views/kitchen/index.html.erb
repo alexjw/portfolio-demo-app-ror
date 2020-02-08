@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <h1>Kitchen</h1>
+  <h2>Pending orders</h2>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Meal</th>
+      <th>Quantity</th>
+      <th>Extra</th>
+      <th>Less</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% Order.where(closed: false).find_each do |order| %>
+      <tr>
+        <th colspan="4"><%= "Order id: " + order.id.to_s + " | Table: " + order.table.to_s %></th>
+      </tr>
+      <% order.order_details.all.find_each do |detail| %>
+      <tr>
+        <td><%= detail.meal.name %></td>
+        <td><%= detail.quantity %></td>
+      </tr>
+      <% end %>
+    <% end %>
+    </tbody>
+  </table>
+</div>

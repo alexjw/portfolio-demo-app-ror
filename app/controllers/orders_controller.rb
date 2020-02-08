@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
 
   # Get /orders
   def index
-
+    puts Order.find_by(closed: false).to_yaml
   end
 
   # GET /orders/1
@@ -26,7 +26,9 @@ class OrdersController < ApplicationController
   end
 
   def close
-    render @order
+    @order.closed = true
+    @order.save
+    redirect_to order_path(@order)
   end
 
   # GET /orders/1/edit
