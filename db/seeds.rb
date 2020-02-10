@@ -23,19 +23,23 @@ bread.save
 
 burger = Meal.new
 burger.name = 'Simple Burger'
+burger.price = 5
 burger.save
 
 burger1 = MealDetail.new
+burger1.meal = burger
 burger1.ingredient = bread
 burger1.quantity = 1
 burger1.save
 
 burger2 = MealDetail.new
+burger2.meal = burger
 burger2.ingredient = meat
 burger2.quantity = 1
 burger2.save
 
 burger3 = MealDetail.new
+burger3.meal = burger
 burger3.ingredient = cheese
 burger3.quantity = 1
 burger3.save

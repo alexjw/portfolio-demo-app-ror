@@ -60,6 +60,10 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     autoprefixer-rails (9.7.4)
       execjs
+    better_errors (2.5.1)
+      coderay (>= 1.0.0)
+      erubi (>= 1.0.0)
+      rack (>= 0.9.0)
     bindex (0.8.1)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
@@ -82,6 +86,7 @@ GEM
       xpath (~> 3.2)
     childprocess (3.0.0)
     cocoon (1.2.14)
+    coderay (1.1.2)
     concurrent-ruby (1.1.5)
     crass (1.0.6)
     erubi (1.9.0)
@@ -93,6 +98,8 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
+    jbuilder (2.9.1)
+      activesupport (>= 4.2.0)
     loofah (2.4.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -202,6 +209,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  better_errors
   bootsnap (>= 1.4.2)
   bootstrap (~> 4.4, >= 4.4.1)
   bootstrap_form (~> 4.3)
@@ -209,6 +217,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   cocoon (~> 1.2, >= 1.2.14)
   font_awesome5_rails
+  jbuilder (~> 2.7)
   puma (~> 4.1)
   rails (~> 6.0.2, >= 6.0.2.1)
   sass-rails (>= 6)

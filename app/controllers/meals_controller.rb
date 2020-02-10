@@ -9,12 +9,13 @@ class MealsController < ApplicationController
   end
 
   # GET /meals/1
+  # GET /meals/1.json
   def show; end
 
   # GET /meals/new
   def new
     @meal = Meal.new
-      #3.times { @meal.recipes.build }
+    # 3.times { @meal.recipes.build }
   end
 
   # GET /meals/1/edit
@@ -55,7 +56,7 @@ class MealsController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def meal_params
-    params.require(:meal).permit(:name, :description, :image,
+    params.require(:meal).permit(:name, :description, :image, :price,
                                  meal_details_attributes: MealDetail.attribute_names.map(&:to_sym).push(:_destroy))
     # recipes_attributes: [:id, :meal_id, :ingredient_id, :quantity, :_destroy]
   end

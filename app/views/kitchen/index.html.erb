@@ -10,18 +10,27 @@
       <th>Quantity</th>
       <th>Extra</th>
       <th>Less</th>
+      <th>Process Order</th>
     </tr>
     </thead>
     <tbody>
     <% Order.where(closed: false).find_each do |order| %>
-      <tr>
-        <th colspan="4"><%= "Order id: " + order.id.to_s + " | Table: " + order.table.to_s %></th>
-      </tr>
-      <% order.order_details.all.find_each do |detail| %>
-      <tr>
-        <td><%= detail.meal.name %></td>
-        <td><%= detail.quantity %></td>
-      </tr>
+      <% if order.order_details.where(done: false).count > 0 %>
+        <tr>
+          <th colspan="4"><%= "Order id: " + order.id.to_s + " | Table: " + order.table.to_s %></th>
+          <!-- todo -->
+          <td><%= link_to "Process Order" %></td>
+        </tr>
+        <% order.order_details.where(done: false).find_each do |detail| %>
+        <tr>
+          <td><%= detail.meal.name %></td>
+          <td><%= detail.quantity %></td>
+          <td></td>
+          <td></td>
+          <!-- todo -->
+          <td><%= link_to "Process Element", order_details_done_path(detail) %></td>
+        </tr>
+        <% end %>
       <% end %>
     <% end %>
     </tbody>

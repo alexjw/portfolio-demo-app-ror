@@ -1,7 +1,7 @@
 <tr class="nested-fields">
-  <td><%= f.collection_select(:meal_id, Meal.all, :id, :name, { prompt: 'Select' }) %></td>
+  <td><%= f.collection_select(:meal_id, Meal.all, :id, :name, { prompt: 'Select' }, { class: 'meal_select' }) %></td>
   <td><%= f.text_field :quantity %></td>
-  <td><%= f.text_field :price %></td>
-  <td><%= f.text_field :status%></td>
-  <td><%= link_to_remove_association "Remove Meal", f %></td>
+  <td class='price-td'><%= f.text_field :price, class: 'price' %></td>
+  <td><%= f.check_box :done %></td>
+  <td><%= !f.object.done ? (link_to_remove_association "Remove Meal", f) : "" %></td>
 </tr>

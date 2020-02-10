@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :table %>
-    <%= f.text_field :table %>
+    <%= f.number_field :table %>
   </div>
 
   <div class="field">
@@ -27,7 +27,7 @@
       <th>Meal</th>
       <th>Quantity</th>
       <th>Price</th>
-      <th>Status</th>
+      <th>Done</th>
       <th>Delete</th>
     </tr>
     </thead>
@@ -46,4 +46,6 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+
+
 <% end %>
